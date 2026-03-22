@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel o Tijera - Cyber Yellow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>SISTEMA DE COMBATE</h1>
+        <p id="mensaje">Gana 3 rondas.</p>
+
+        <div class="scoreboard">
+            <div class="score-box">
+                <span class="label">JUGADOR</span>
+                <span id="victorias" class="score-num">0</span>
+            </div>
+            <div class="score-box">
+                <span class="label">COMPUTADORA</span> <span id="perdidas" class="score-num">0</span>
+            </div>
+        </div>
+        
+        <div class="buttons">
+            <button onclick="jugar(1)">
+                <img src="https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/512/emoji_u1f91c.png" alt="Piedra">
+                <span>Piedra</span>
+            </button>
+            <button onclick="jugar(2)">
+                <img src="https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/512/emoji_u1f4c4.png" alt="Papel">
+                <span>Papel</span>
+            </button>
+            <button onclick="jugar(3)">
+                <img src="https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/512/emoji_u2702.png" alt="Tijera">
+                <span>Tijera</span>
+            </button>
+        </div>
+
+        <div class="battle-field" id="battle-field">
+            <div class="choices-display">
+                <div class="choice">TÚ <div id="user-choice" class="icon-placeholder">?</div></div>
+                <div class="vs">VS</div>
+                <div class="choice">PC <div id="pc-choice" class="icon-placeholder">?</div></div>
+            </div>
+            <div id="result-label">ESPERANDO JUGADA...</div>
+        </div>
+        
+        <button id="reset" onclick="resetear()">REINICIAR SISTEMA</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

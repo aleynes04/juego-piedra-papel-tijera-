@@ -1,0 +1,94 @@
+:root {
+    --yellow: #ffdf00;
+    --dark: #111111;
+    --card: #1a1a1a;
+    --gray: #404040;
+}
+
+body {
+    background-color: var(--dark);
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    background: var(--card);
+    padding: 2rem;
+    border: 2px solid var(--yellow);
+    border-radius: 8px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 223, 0, 0.2);
+}
+
+h1 { color: var(--yellow); font-size: 1.4rem; letter-spacing: 3px; }
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    background: #000;
+    padding: 10px;
+    margin: 15px 0;
+    border-left: 4px solid var(--yellow);
+}
+
+.score-num { font-size: 2rem; color: white; font-weight: bold; }
+.label { font-size: 0.7rem; color: var(--yellow); display: block; }
+
+.buttons { display: flex; gap: 10px; margin-bottom: 20px; }
+
+.buttons button {
+    flex: 1;
+    background: #222;
+    border: 1px solid var(--gray);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 4px;
+}
+
+.buttons button:hover {
+    background: var(--yellow);
+    color: black;
+}
+
+
+.buttons button img {
+    width: 35px; 
+    height: 35px;
+    display: block;
+    margin: 0 auto 5px;
+}
+
+.battle-field {
+    background: #000;
+    padding: 15px;
+    border: 1px dashed var(--gray);
+}
+
+.icon-placeholder img {
+    width: 30px;
+    height: 30px;
+}
+
+#result-label {
+    margin-top: 10px;
+    color: var(--yellow);
+    font-weight: bold;
+}
+
+#reset {
+    margin-top: 15px;
+    background: none;
+    border: 1px solid var(--yellow);
+    color: var(--yellow);
+    padding: 8px;
+    cursor: pointer;
+    display: none;
+}
