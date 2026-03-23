@@ -28,6 +28,35 @@ body {
 
 h1 { color: var(--yellow); font-size: 1.4rem; letter-spacing: 3px; }
 
+.settings-bar {
+    font-size: 0.8rem;
+    color: var(--yellow);
+    margin: 10px 0;
+}
+
+.settings-bar select {
+    background: #000;
+    color: var(--yellow);
+    border: 1px solid var(--yellow);
+    padding: 3px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.historical-stats {
+    background: #000;
+    font-size: 0.75rem;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    color: #ccc;
+    border: 1px dotted var(--gray);
+}
+
+.stat {
+    color: var(--yellow);
+    font-weight: bold;
+}
 .scoreboard {
     display: flex;
     justify-content: space-around;
@@ -91,4 +120,72 @@ h1 { color: var(--yellow); font-size: 1.4rem; letter-spacing: 3px; }
     padding: 8px;
     cursor: pointer;
     display: none;
+    transition: 0.2s;
+}
+
+#reset:hover {
+    background: var(--yellow);
+    color: var(--dark);
+}
+
+/* --- ANIMACIONES DE COMBATE --- */
+.shake {
+    animation: shakeEffect 0.3s infinite;
+}
+
+@keyframes shakeEffect {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    25% { transform: translate(-2px, -1px) rotate(-3deg); }
+    50% { transform: translate(2px, -2px) rotate(3deg); }
+    75% { transform: translate(-1px, 2px) rotate(-1deg); }
+    100% { transform: translate(1px, -1px) rotate(0deg); }
+}
+
+/* --- BORDES DINÁMICOS DE RESULTADO --- */
+.battle-field {
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.battle-field.win-border {
+    border-color: #00ff00 !important;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+}
+
+.battle-field.lose-border {
+    border-color: #ff0000 !important;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+}
+
+.battle-field.tie-border {
+    border-color: #aaaaaa !important;
+    box-shadow: 0 0 15px rgba(170, 170, 170, 0.4);
+}
+
+.icon-placeholder img {
+    transition: transform 0.2s;
+}
+
+/* --- RESPONSIVIDAD Y ACCESIBILIDAD --- */
+@media (max-width: 400px) {
+    .game-container {
+        width: 90%;
+        padding: 1rem;
+    }
+    .buttons {
+        gap: 5px;
+    }
+    .buttons button {
+        padding: 6px;
+        font-size: 0.8rem;
+    }
+    .buttons button img {
+        width: 25px;
+        height: 25px;
+    }
+    .score-num {
+        font-size: 1.5rem;
+    }
+    h1 {
+        font-size: 1.2rem;
+    }
 }

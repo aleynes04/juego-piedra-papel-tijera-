@@ -9,7 +9,19 @@
 <body>
     <div class="game-container">
         <h1>SISTEMA DE COMBATE</h1>
-        <p id="mensaje">Gana 3 rondas.</p>
+        
+        <div class="settings-bar">
+            Jugamos al mejor de: 
+            <select id="meta-select">
+                <option value="1">1 Punto</option>
+                <option value="3" selected>3 Puntos</option>
+                <option value="5">5 Puntos</option>
+            </select>
+        </div>
+
+        <div class="historical-stats">
+            🏆 Historial - Ganadas: <span id="hist-ganadas" class="stat">0</span> | Perdidas: <span id="hist-perdidas" class="stat">0</span>
+        </div>
 
         <div class="scoreboard">
             <div class="score-box">
@@ -21,31 +33,31 @@
             </div>
         </div>
         
-        <div class="buttons">
-            <button onclick="jugar(1)">
-                <img src="https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/512/emoji_u1f91c.png" alt="Piedra">
+        <div class="buttons" role="group" aria-label="Controles del Juego">
+            <button id="btn-piedra" aria-label="Elegir Piedra">
+                <img src="assets/images/piedra.png" alt="Piedra">
                 <span>Piedra</span>
             </button>
-            <button onclick="jugar(2)">
-                <img src="https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/512/emoji_u1f4c4.png" alt="Papel">
+            <button id="btn-papel" aria-label="Elegir Papel">
+                <img src="assets/images/papel.png" alt="Papel">
                 <span>Papel</span>
             </button>
-            <button onclick="jugar(3)">
-                <img src="https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/512/emoji_u2702.png" alt="Tijera">
+            <button id="btn-tijera" aria-label="Elegir Tijera">
+                <img src="assets/images/tijera.png" alt="Tijera">
                 <span>Tijera</span>
             </button>
         </div>
 
-        <div class="battle-field" id="battle-field">
+        <div class="battle-field" id="battle-field" aria-live="polite">
             <div class="choices-display">
-                <div class="choice">TÚ <div id="user-choice" class="icon-placeholder">?</div></div>
-                <div class="vs">VS</div>
-                <div class="choice">PC <div id="pc-choice" class="icon-placeholder">?</div></div>
+                <div class="choice">TÚ <div id="user-choice" class="icon-placeholder" aria-hidden="true">?</div></div>
+                <div class="vs" aria-hidden="true">VS</div>
+                <div class="choice">PC <div id="pc-choice" class="icon-placeholder" aria-hidden="true">?</div></div>
             </div>
-            <div id="result-label">ESPERANDO JUGADA...</div>
+            <div id="result-label" aria-live="assertive">ESPERANDO JUGADA...</div>
         </div>
         
-        <button id="reset" onclick="resetear()">REINICIAR SISTEMA</button>
+        <button id="reset">REINICIAR SISTEMA</button>
     </div>
     <script src="script.js"></script>
 </body>
